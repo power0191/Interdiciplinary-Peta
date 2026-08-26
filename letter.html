@@ -46,7 +46,10 @@
         <div class="letter-page" id="english">
           <a class="letter-back" href="letter.html">&larr; Back</a>
           <p class="letter-greeting">Dear Ms. Salac, — English</p>
-          <p class="letter-body">PICTURE/DOCUMENT/EWAN BASTA YUNG PETA</p>
+          <div class="pdf-frame-wrap">
+            <iframe class="peta-embed" src="eng-script.pdf" title="English Script - Climate Change"></iframe>
+            <a class="pdf-zoom-btn" href="#english-zoom" aria-label="Zoom in on PDF">&#128269;</a>
+          </div>
           <p class="letter-signature">- Group Four</p>
         </div>
 
@@ -64,7 +67,7 @@
         <!-- Members Page -->
         <div class="letter-page" id="members">
           <a class="letter-back" href="letter.html">&larr; Back</a>
-          <p class="letter-greeting">MEMBERS OF GROUP FOUR</p>
+          <p class="letter-greeting">MEMBER OF GROUP FOUR</p>
           <p class="letter-body">Members of Group 4:</p>
           <ul class="member-list">
             <li><span class="member-name">Asher Megallon </span><span class="member-role">Leader, and Output Maker</span></li>
@@ -131,6 +134,219 @@
   <div class="pdf-zoom-overlay" id="ap-zoom">
     <a href="#ap" class="pdf-zoom-close" aria-label="Close zoomed view">&times;</a>
     <iframe src="ap-cve-peta.pdf" title="AP Performance Task Zoomed"></iframe>
+  </div>
+
+  <div class="pdf-zoom-overlay" id="english-zoom">
+    <a href="#english" class="pdf-zoom-close" aria-label="Close zoomed view">&times;</a>
+    <iframe src="eng-script.pdf" title="English Script Zoomed"></iframe>
+  </div>
+
+  <div class="pdf-zoom-overlay" id="cve-zoom">
+    <a href="#cve" class="pdf-zoom-close" aria-label="Close zoomed view">&times;</a>
+    <iframe src="ap-cve-peta.pdf" title="CVE Performance Task Zoomed"></iframe>
+  </div>
+
+  <div class="pdf-zoom-overlay" id="science-zoom">
+    <a href="#science" class="pdf-zoom-close" aria-label="Close zoomed view">&times;</a>
+    <img src="Science 10 - T1.png" alt="Chemical Safety At Home Poster Zoomed" class="peta-img-zoomed" />
+  </div>
+
+  <script>
+    (function () {
+      const egg = document.getElementById('easterEgg');
+      const sound = document.getElementById('easterEggSound');
+      if (!egg || !sound) return;
+
+      egg.addEventListener('click', function (e) {
+        e.preventDefault();
+        sound.currentTime = 0;
+        sound.play().catch(() => {});
+        egg.classList.add('bounce');
+        setTimeout(() => egg.classList.remove('bounce'), 600);
+      });
+    })();
+
+    (function () {
+      const bgMusic = document.getElementById('bgMusic');
+      const toggle = document.getElementById('musicToggle');
+      if (!bgMusic || !toggle) return;
+
+      bgMusic.volume = 0.1;
+      let started = false;
+
+      function markPlaying() {
+        started = true;
+        toggle.textContent = '🔊';
+        toggle.classList.add('playing');
+      }
+
+      function markPaused() {
+        toggle.textContent = '🎵';
+        toggle.classList.remove('playing');
+      }
+
+      bgMusic.play().then(markPlaying).catch(markPaused);
+
+      document.addEventListener('click', function onFirstClick() {
+        if (!started) {
+          bgMusic.play().then(markPlaying).catch(markPaused);
+        }
+        document.removeEventListener('click', onFirstClick);
+      }, { once: true });
+
+      toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (bgMusic.paused) {
+          bgMusic.play().then(markPlaying).catch(markPaused);
+        } else {
+          bgMusic.pause();
+          markPaused();
+        }
+      });
+    })();
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interdisciplinary Performance Task — Subjects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="bgMusic" src="bg-music.mp3" loop preload="auto"></audio>
+  <button class="music-toggle" id="musicToggle" aria-label="Toggle background music" title="Music">🎵</button>
+
+  <div class="scrapbook-page">
+    <a class="back-link" href="index.html">&larr; Back to envelope</a>
+    <h1 class="scrapbook-title">Pick a subject to open its letter</h1>
+
+    <div class="scrapbook-layout">
+      <div class="polaroid-column left">
+        <a class="polaroid" href="#math">
+          <div class="polaroid-photo"><img src="mslumba.jpg" alt="" style="object-position: center 15%;" onerror="this.remove()" /></div>
+          <span class="polaroid-caption">Math</span>
+        </a>
+        <a class="polaroid" href="#english">
+          <div class="polaroid-photo"><img src="mssalac.png" alt="" style="object-position: center 15%;" onerror="this.remove()" /></div>
+          <span class="polaroid-caption">English</span>
+        </a>
+        <a class="polaroid" href="#ap">
+          <div class="polaroid-photo"><img src="msgarcia.png" alt="" style="object-position: center 15%;" onerror="this.remove()" /></div>
+          <span class="polaroid-caption">AP</span>
+        </a>
+      </div>
+
+      <div class="letter-stack">
+        <!-- Math Page -->
+        <div class="letter-page" id="math">
+          <a class="letter-back" href="letter.html">&larr; Back</a>
+          <p class="letter-greeting">Dear Ms. Lumba, — Math</p>
+          <p class="letter-body">PICTURE/DOCUMENT/EWAN BASTA YUNG PETA</p>
+          <p class="letter-signature">- Group Four</p>
+        </div>
+
+        <!-- English Page -->
+        <div class="letter-page" id="english">
+          <a class="letter-back" href="letter.html">&larr; Back</a>
+          <p class="letter-greeting">Dear Ms. Salac, — English</p>
+          <div class="pdf-frame-wrap">
+            <iframe class="peta-embed" src="eng-script.pdf" title="English Script - Climate Change"></iframe>
+            <a class="pdf-zoom-btn" href="#english-zoom" aria-label="Zoom in on PDF">&#128269;</a>
+          </div>
+          <p class="letter-signature">- Group Four</p>
+        </div>
+
+        <!-- AP Page -->
+        <div class="letter-page" id="ap">
+          <a class="letter-back" href="letter.html">&larr; Back</a>
+          <p class="letter-greeting">Dear Ms. Garcia, — AP</p>
+          <div class="pdf-frame-wrap">
+            <iframe class="peta-embed" src="ap-cve-peta.pdf" title="AP and CVE Performance Task"></iframe>
+            <a class="pdf-zoom-btn" href="#ap-zoom" aria-label="Zoom in on PDF">&#128269;</a>
+          </div>
+          <p class="letter-signature">- Group Four</p>
+        </div>
+
+        <!-- Members Page -->
+        <div class="letter-page" id="members">
+          <a class="letter-back" href="letter.html">&larr; Back</a>
+          <p class="letter-greeting">MEMBER OF GROUP FOUR</p>
+          <p class="letter-body">Members of Group 4:</p>
+          <ul class="member-list">
+            <li><span class="member-name">Asher Megallon </span><span class="member-role">Leader, and Output Maker</span></li>
+            <li><span class="member-name">Jaydee Canlas </span><span class="member-role">Resource Provider, and Researcher</span></li>
+            <li><span class="member-name">Mark Marcelo</span><span class="member-role">Lead Programmer, Survey Organizer</span></li>
+            <li><span class="member-name">Sama Ibrahim </span><span class="member-role">Script Writer, and Output Maker</span></li>
+            <li><span class="member-name">Erica Zara </span><span class="member-role">Scriptwriter and Designer</span></li>
+            <li><span class="member-name">Felisity Hipolito</span><span class="member-role">Designer</span></li>
+            <li><span class="member-name">Vince Eliang</span><span class="member-role">Researcher, Survey Distributer</span></li>
+          </ul>
+          <p class="letter-signature">- Group Four</p>
+        </div>
+
+        <!-- CVE Page -->
+        <div class="letter-page" id="cve">
+          <a class="letter-back" href="letter.html">&larr; Back</a>
+          <p class="letter-greeting">Dear Sir. Lim, — CVE</p>
+          <div class="pdf-frame-wrap">
+            <iframe class="peta-embed" src="ap-cve-peta.pdf" title="AP and CVE Performance Task"></iframe>
+            <a class="pdf-zoom-btn" href="#cve-zoom" aria-label="Zoom in on PDF">&#128269;</a>
+          </div>
+          <p class="letter-signature">— Group Four</p>
+        </div>
+
+        <!-- Science Page -->
+        <div class="letter-page" id="science">
+          <a class="letter-back" href="letter.html">&larr; Back</a>
+          <p class="letter-greeting">Dear Sir. Jay, — Science</p>
+          <div class="peta-img-wrap">
+            <img src="Science 10 - T1.png" alt="Chemical Safety At Home Poster" class="peta-img-embed" />
+            <a class="pdf-zoom-btn" href="#science-zoom" aria-label="Zoom in on Science poster">&#128269;</a>
+          </div>
+          <p class="letter-signature">— Group Four</p>
+        </div>
+
+        <!-- Intro Page -->
+        <div class="letter-page intro" id="intro">
+          <p class="letter-greeting">Dear reader,</p>
+          <p class="letter-body">Dear reader, this is group 4's final output for the interdisciplinary PETA, feel free to access our outputs that are easily accessible( ＾ω＾ )</p>
+          <p class="letter-signature">— Group Four</p>
+          <span class="easter-egg" id="easterEgg" aria-label="secret">🐰</span>
+          <audio id="easterEggSound" src="easter-egg.mp3" preload="auto"></audio>
+        </div>
+      </div>
+
+      <div class="polaroid-column right">
+        <a class="polaroid" href="#science">
+          <div class="polaroid-photo"><img src="sirjay.png" alt="" style="object-position: center 20%;" onerror="this.remove()" /></div>
+          <span class="polaroid-caption">Science</span>
+        </a>
+        <a class="polaroid" href="#cve">
+          <div class="polaroid-photo"><img src="sirlim.png" alt="" style="object-position: center 20%;" onerror="this.remove()" /></div>
+          <span class="polaroid-caption">CVE</span>
+        </a>
+        <a class="polaroid" href="#members">
+          <div class="polaroid-photo"><img src="CLICK.png" alt="" onerror="this.remove()" /></div>
+          <span class="polaroid-caption">Members</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Zoom Overlays (Moved outside card containers) -->
+  <div class="pdf-zoom-overlay" id="ap-zoom">
+    <a href="#ap" class="pdf-zoom-close" aria-label="Close zoomed view">&times;</a>
+    <iframe src="ap-cve-peta.pdf" title="AP Performance Task Zoomed"></iframe>
+  </div>
+
+  <div class="pdf-zoom-overlay" id="english-zoom">
+    <a href="#english" class="pdf-zoom-close" aria-label="Close zoomed view">&times;</a>
+    <iframe src="eng-script.pdf" title="English Script Zoomed"></iframe>
   </div>
 
   <div class="pdf-zoom-overlay" id="cve-zoom">
