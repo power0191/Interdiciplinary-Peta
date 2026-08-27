@@ -41,7 +41,10 @@
 
           <div class="math-question">
             <p class="math-question-label">Question 1</p>
-            <img src="1.jpg" alt="Box plot: Average Disposals of Households on Single-use Plastics" class="math-chart-img" />
+            <div class="peta-img-wrap">
+              <img src="1.jpg" alt="Box plot: Average Disposals of Households on Single-use Plastics" class="math-chart-img" />
+              <a class="pdf-zoom-btn" href="#math-q1-zoom" aria-label="Zoom in on Question 1 chart">&#128269;</a>
+            </div>
             <ul class="stat-summary">
               <li><span class="stat-label">Minimum</span><span class="stat-value">2</span></li>
               <li><span class="stat-label">Q1</span><span class="stat-value">6</span></li>
@@ -54,7 +57,10 @@
 
           <div class="math-question">
             <p class="math-question-label">Question 2</p>
-            <img src="2.jpg" alt="Bar graph: Frequency In Sorting Wastes" class="math-chart-img" />
+            <div class="peta-img-wrap">
+              <img src="2.jpg" alt="Bar graph: Frequency In Sorting Wastes" class="math-chart-img" />
+              <a class="pdf-zoom-btn" href="#math-q2-zoom" aria-label="Zoom in on Question 2 chart">&#128269;</a>
+            </div>
             <p class="letter-body">The bar graph shows that most households do not sort their waste regularly. 10 out of 20 households (50%) sort their waste Sometimes, making it the most common response. Meanwhile, 5 households (25%) Always sort their waste, 4 households (20%) do so Often, and 1 household (5%) Never sorts waste. Although many households practice waste sorting, half of them only do it sometimes. This shows that waste sorting is not yet a regular habit for most households. The action plan should encourage households to sort their waste more regularly and make proper waste segregation a daily practice.</p>
           </div>
 
@@ -62,7 +68,7 @@
             <p class="math-question-label">Question 3</p>
             <div class="peta-img-wrap">
               <img src="3.jpg" alt="Line graph: Awareness In Storing Household Chemicals" class="math-chart-img" />
-            
+              <a class="pdf-zoom-btn" href="#math-q3-zoom" aria-label="Zoom in on Question 3 chart">&#128269;</a>
             </div>
             <p class="letter-body">The graph shows that most households are aware of how to safely store household chemicals. 10 out of 20 households (50%) are Very Aware, while 3 households (15%) are Extremely Aware. Another 6 households (30%) are Moderately Aware, while only 1 household (5%) is Slightly Aware, and no household is Not Aware At All. This means that 65% of households have a high level of awareness about proper chemical storage. However, some households still need more information to make sure they know how to store chemicals safely. The action plan should continue improving awareness, especially among households with lower levels of awareness.</p>
           </div>
@@ -174,14 +180,24 @@
     <iframe src="ap-cve-peta.pdf" title="CVE Performance Task Zoomed"></iframe>
   </div>
 
+  <div class="pdf-zoom-overlay" id="math-q1-zoom">
+    <a href="#math" class="pdf-zoom-close" aria-label="Close zoomed view">&times;</a>
+    <div class="science-zoom-content">
+      <img src="1.jpg" alt="Box plot: Average Disposals of Households on Single-use Plastics Zoomed" class="peta-img-zoomed" />
+    </div>
+  </div>
+
+  <div class="pdf-zoom-overlay" id="math-q2-zoom">
+    <a href="#math" class="pdf-zoom-close" aria-label="Close zoomed view">&times;</a>
+    <div class="science-zoom-content">
+      <img src="2.jpg" alt="Bar graph: Frequency In Sorting Wastes Zoomed" class="peta-img-zoomed" />
+    </div>
+  </div>
+
   <div class="pdf-zoom-overlay" id="math-q3-zoom">
     <a href="#math" class="pdf-zoom-close" aria-label="Close zoomed view">&times;</a>
     <div class="science-zoom-content">
-      <img src="math-q3-chemicals.jpg" alt="Line graph: Awareness In Storing Household Chemicals Zoomed" class="peta-img-zoomed" />
-      <div class="science-tips-list">
-        <p class="science-tips-title">Question 3</p>
-        <p class="letter-body">The graph shows that most households are aware of how to safely store household chemicals. 10 out of 20 households (50%) are Very Aware, while 3 households (15%) are Extremely Aware. Another 6 households (30%) are Moderately Aware, while only 1 household (5%) is Slightly Aware, and no household is Not Aware At All. This means that 65% of households have a high level of awareness about proper chemical storage. However, some households still need more information to make sure they know how to store chemicals safely. The action plan should continue improving awareness, especially among households with lower levels of awareness.</p>
-      </div>
+      <img src="3.jpg" alt="Line graph: Awareness In Storing Household Chemicals Zoomed" class="peta-img-zoomed" />
     </div>
   </div>
   <div class="pdf-zoom-overlay" id="science-zoom">
@@ -246,4 +262,5 @@
     })();
   </script>
 </body>
+</html>
 </html>
